@@ -3,13 +3,15 @@ import { TopicGeneratorPage } from "./presentation/pages/TopicGenerator";
 import { ImageGeneratorPage } from "./presentation/pages/ImageGenerator";
 import { AIDetectorPage } from "./presentation/pages/AIDetector";
 import { ArchitecturePage } from "./presentation/pages/Architecture";
+import { DemoTestsPage } from "./presentation/pages/DemoTests";
 
-type Page = "topic" | "image" | "detect" | "arch";
+type Page = "topic" | "image" | "detect" | "demo" | "arch";
 
 const NAV_ITEMS: { key: Page; label: string; icon: string }[] = [
   { key: "topic", label: "主題生成", icon: "⌘" },
   { key: "image", label: "新聞配圖", icon: "◻" },
   { key: "detect", label: "AI 檢測", icon: "◎" },
+  { key: "demo", label: "Demo 素材", icon: "▤" },
   { key: "arch", label: "系統架構", icon: "⬡" },
 ];
 
@@ -58,6 +60,7 @@ function App() {
         {activePage === "topic" && <TopicGeneratorPage />}
         {activePage === "image" && <ImageGeneratorPage />}
         {activePage === "detect" && <AIDetectorPage />}
+        {activePage === "demo" && <DemoTestsPage />}
         {activePage === "arch" && <ArchitecturePage />}
       </main>
     </>

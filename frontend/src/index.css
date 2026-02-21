@@ -784,3 +784,77 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang HK", sans-serif;
   overflow: visible;
 }
+
+/* Demo test cards */
+.test-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.test-card {
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 16px 20px;
+  transition: border-color var(--transition);
+}
+
+.test-card:hover {
+  border-color: var(--gray-300);
+}
+
+.test-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.test-card-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.test-card-category {
+  font-size: 12px;
+  color: var(--gray-400);
+  padding: 2px 8px;
+  background: var(--gray-100);
+  border-radius: 4px;
+}
+
+.test-card-header .btn-copy {
+  margin-left: auto;
+}
+
+.test-card-text {
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.btn-copy {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity var(--transition);
+  flex-shrink: 0;
+}
+
+.btn-copy:hover {
+  opacity: 0.85;
+}
+
+.btn-copy.copied {
+  background: var(--gray-400);
+}
