@@ -31,5 +31,16 @@ class DetectResponse(BaseModel):
     suggestion: str
 
 
+class ConfigResponse(BaseModel):
+    api_key_masked: str
+    base_url: str
+    model: str
+    api_version: str
+
+
+class ConfigUpdateRequest(BaseModel):
+    api_key: str = Field(..., min_length=1, description="HKBU GenAI API key")
+
+
 class ErrorResponse(BaseModel):
     detail: str

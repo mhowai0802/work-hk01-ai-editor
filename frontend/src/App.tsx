@@ -4,8 +4,9 @@ import { ImageGeneratorPage } from "./presentation/pages/ImageGenerator";
 import { AIDetectorPage } from "./presentation/pages/AIDetector";
 import { ArchitecturePage } from "./presentation/pages/Architecture";
 import { DemoTestsPage } from "./presentation/pages/DemoTests";
+import { SettingsPage } from "./presentation/pages/Settings";
 
-type Page = "topic" | "image" | "detect" | "demo" | "arch";
+type Page = "topic" | "image" | "detect" | "demo" | "arch" | "settings";
 
 const NAV_ITEMS: { key: Page; label: string; icon: string }[] = [
   { key: "topic", label: "主題生成", icon: "⌘" },
@@ -13,6 +14,7 @@ const NAV_ITEMS: { key: Page; label: string; icon: string }[] = [
   { key: "detect", label: "AI 檢測", icon: "◎" },
   { key: "demo", label: "Demo 素材", icon: "▤" },
   { key: "arch", label: "系統架構", icon: "⬡" },
+  { key: "settings", label: "設定", icon: "⚙" },
 ];
 
 function HK01Logo() {
@@ -62,6 +64,7 @@ function App() {
         {activePage === "detect" && <AIDetectorPage />}
         {activePage === "demo" && <DemoTestsPage />}
         {activePage === "arch" && <ArchitecturePage />}
+        {activePage === "settings" && <SettingsPage />}
       </main>
     </>
   );

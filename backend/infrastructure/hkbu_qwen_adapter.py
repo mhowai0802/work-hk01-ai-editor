@@ -14,7 +14,7 @@ class HKBUQwenAdapter(LLMPort):
         model: str = "qwen-plus",
         api_version: str = "v1",
     ) -> None:
-        self._api_key = api_key
+        self.api_key = api_key
         self._base_url = base_url
         self._model = model
         self._api_version = api_version
@@ -29,7 +29,7 @@ class HKBUQwenAdapter(LLMPort):
         return {
             "accept": "application/json",
             "Content-Type": "application/json",
-            "api-key": self._api_key,
+            "api-key": self.api_key,
         }
 
     async def chat(self, system_prompt: str, user_message: str) -> str:

@@ -14,6 +14,7 @@ from application.generate_image import GenerateImageUseCase
 from application.generate_topics import GenerateTopicsUseCase
 from infrastructure.hkbu_qwen_adapter import HKBUQwenAdapter
 from infrastructure.pollinations_adapter import PollinationsAdapter
+from presentation.config_router import create_config_router
 from presentation.detect_router import create_detect_router
 from presentation.image_router import create_image_router
 from presentation.topic_router import create_topic_router
@@ -60,6 +61,7 @@ app.add_middleware(
 app.include_router(create_topic_router(topic_use_case))
 app.include_router(create_image_router(image_use_case))
 app.include_router(create_detect_router(detect_use_case))
+app.include_router(create_config_router(llm_adapter))
 
 
 @app.get("/health")
