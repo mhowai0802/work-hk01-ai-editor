@@ -1,6 +1,6 @@
 export interface TopicResult {
-  topics: string[];
-  passageSummary: string;
+  topic: string;
+  tags: string[];
 }
 
 export interface ImageResult {

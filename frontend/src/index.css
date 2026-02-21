@@ -301,6 +301,20 @@ body {
   margin-bottom: 16px;
 }
 
+/* Generated topic headline */
+.generated-topic {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  line-height: 1.5;
+  margin: 0 0 4px;
+  padding: 16px 20px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+}
+
 /* Topic tags */
 .topic-list {
   display: flex;

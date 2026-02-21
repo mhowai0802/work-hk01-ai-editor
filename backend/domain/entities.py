@@ -3,8 +3,8 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class TopicResult:
-    topics: list[str]
-    passage_summary: str
+    topic: str
+    tags: list[str]
 
 
 @dataclass(frozen=True)

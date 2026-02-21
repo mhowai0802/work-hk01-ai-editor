@@ -13,8 +13,8 @@ def create_topic_router(use_case: GenerateTopicsUseCase) -> APIRouter:
         try:
             result = await use_case.execute(request.passage)
             return TopicResponse(
-                topics=result.topics,
-                passage_summary=result.passage_summary,
+                topic=result.topic,
+                tags=result.tags,
             )
         except DomainError as e:
             raise HTTPException(status_code=502, detail=str(e))

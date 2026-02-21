@@ -11,7 +11,7 @@ export function TopicGeneratorPage() {
     <div className="page-container">
       <h1 className="page-title">主題生成</h1>
       <p className="page-subtitle">
-        貼上一段中文新聞文章，AI 將自動提取關鍵主題
+        貼上一段中文新聞文章，AI 將生成 HK01 風格的標題和標籤
       </p>
 
       <div className="input-area">
@@ -51,16 +51,14 @@ export function TopicGeneratorPage() {
 
       {result && (
         <div className="result-section">
-          <div className="result-label">提取的主題</div>
+          <div className="result-label">生成的標題</div>
+          <h2 className="generated-topic">{result.topic}</h2>
+          <div className="result-label" style={{ marginTop: 24 }}>標籤</div>
           <div className="topic-list">
-            {result.topics.map((topic) => (
-              <span key={topic} className="topic-tag">{topic}</span>
+            {result.tags.map((tag) => (
+              <span key={tag} className="topic-tag">{tag}</span>
             ))}
           </div>
-          <p className="summary-text">
-            <strong>摘要 — </strong>
-            {result.passageSummary}
-          </p>
         </div>
       )}
     </div>

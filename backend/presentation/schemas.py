@@ -6,8 +6,8 @@ class TopicRequest(BaseModel):
 
 
 class TopicResponse(BaseModel):
-    topics: list[str]
-    passage_summary: str
+    topic: str
+    tags: list[str]
 
 
 class ImageRequest(BaseModel):

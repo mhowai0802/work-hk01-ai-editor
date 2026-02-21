@@ -3,8 +3,8 @@ import type { TopicResult } from "../domain/types";
 import apiClient from "./apiClient";
 
 interface TopicApiResponse {
-  topics: string[];
-  passage_summary: string;
+  topic: string;
+  tags: string[];
 }
 
 export class TopicRepository implements ITopicRepository {
@@ -14,8 +14,8 @@ export class TopicRepository implements ITopicRepository {
       { passage }
     );
     return {
-      topics: data.topics,
-      passageSummary: data.passage_summary,
+      topic: data.topic,
+      tags: data.tags,
     };
   }
 }
