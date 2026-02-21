@@ -49,8 +49,6 @@ function Box({ x, y, w, h, label, sub, filled }: BoxProps) {
 }
 
 function Arrow({ x1, y1, x2, y2, label }: { x1: number; y1: number; x2: number; y2: number; label?: string }) {
-  const isDown = y2 > y1;
-  const isRight = x2 > x1;
   const midY = (y1 + y2) / 2;
   const midX = (x1 + x2) / 2;
 
