@@ -908,3 +908,129 @@ body {
   color: var(--black);
   font-weight: 500;
 }
+
+/* Mobile hamburger button -- hidden on desktop */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 30;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* ========== Mobile: < 768px ========== */
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .page-container {
+    padding: 72px 20px 60px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .input-area textarea {
+    min-height: 150px;
+  }
+
+  .arch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flowchart {
+    overflow-x: auto;
+  }
+
+  .image-result-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meter-value {
+    font-size: 22px;
+  }
+
+  .generated-topic {
+    font-size: 18px;
+    padding: 14px 16px;
+  }
+
+  .settings-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .settings-key {
+    width: auto;
+  }
+
+  .test-card-header {
+    flex-wrap: wrap;
+  }
+
+  .detect-verdict {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ========== Tablet: 768px - 1024px ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --sidebar-width: 200px;
+  }
+
+  .page-container {
+    padding: 40px 28px 60px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}

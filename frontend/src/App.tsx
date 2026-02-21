@@ -36,10 +36,28 @@ function HK01Logo() {
 
 function App() {
   const [activePage, setActivePage] = useState<Page>("topic");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const handleNav = (key: Page) => {
+    setActivePage(key);
+    setSidebarOpen(false);
+  };
 
   return (
     <>
-      <aside className="sidebar">
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle menu"
+      >
+        {sidebarOpen ? "✕" : "☰"}
+      </button>
+
+      {sidebarOpen && (
+        <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} />
+      )}
+
+      <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-logo">
           <HK01Logo />
         </div>
@@ -48,7 +66,7 @@ function App() {
             <button
               key={item.key}
               className={`sidebar-item ${activePage === item.key ? "active" : ""}`}
-              onClick={() => setActivePage(item.key)}
+              onClick={() => handleNav(item.key)}
             >
               <span className="icon">{item.icon}</span>
               {item.label}
